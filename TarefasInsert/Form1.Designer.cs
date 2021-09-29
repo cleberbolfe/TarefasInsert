@@ -1,7 +1,7 @@
 ﻿
 namespace TarefasInsert
 {
-    partial class Form1
+    partial class Formtodo
     {
         /// <summary>
         /// Required designer variable.
@@ -35,15 +35,16 @@ namespace TarefasInsert
             this.label4 = new System.Windows.Forms.Label();
             this.tbAtivo = new System.Windows.Forms.TextBox();
             this.tbDescricao = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgtodo = new System.Windows.Forms.DataGridView();
             this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.coldescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colAtivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btInserir = new System.Windows.Forms.Button();
+            this.btLimpar = new System.Windows.Forms.Button();
             this.tbData = new System.Windows.Forms.MaskedTextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tbID = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgtodo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,18 +105,18 @@ namespace TarefasInsert
             this.tbDescricao.Size = new System.Drawing.Size(554, 200);
             this.tbDescricao.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgtodo
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgtodo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgtodo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colID,
             this.colData,
             this.coldescricao,
             this.colAtivo});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 444);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(766, 199);
-            this.dataGridView1.TabIndex = 8;
+            this.dgtodo.Location = new System.Drawing.Point(19, 444);
+            this.dgtodo.Name = "dgtodo";
+            this.dgtodo.Size = new System.Drawing.Size(758, 199);
+            this.dgtodo.TabIndex = 8;
             // 
             // colID
             // 
@@ -139,26 +140,27 @@ namespace TarefasInsert
             this.colAtivo.HeaderText = "ATIVO";
             this.colAtivo.Name = "colAtivo";
             // 
-            // button2
+            // btInserir
             // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.button2.Location = new System.Drawing.Point(297, 306);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 59);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "INSERIR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btInserir.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.btInserir.Location = new System.Drawing.Point(297, 306);
+            this.btInserir.Name = "btInserir";
+            this.btInserir.Size = new System.Drawing.Size(179, 59);
+            this.btInserir.TabIndex = 9;
+            this.btInserir.Text = "INSERIR";
+            this.btInserir.UseVisualStyleBackColor = true;
+            this.btInserir.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btLimpar
             // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 24F);
-            this.button3.Location = new System.Drawing.Point(526, 306);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(179, 59);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "LIMPAR";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btLimpar.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.btLimpar.Location = new System.Drawing.Point(526, 306);
+            this.btLimpar.Name = "btLimpar";
+            this.btLimpar.Size = new System.Drawing.Size(179, 59);
+            this.btLimpar.TabIndex = 10;
+            this.btLimpar.Text = "LIMPAR";
+            this.btLimpar.UseVisualStyleBackColor = true;
+            this.btLimpar.Click += new System.EventHandler(this.button3_Click);
             // 
             // tbData
             // 
@@ -170,21 +172,34 @@ namespace TarefasInsert
             this.tbData.TabIndex = 13;
             this.tbData.ValidatingType = typeof(System.DateTime);
             // 
-            // Form1
+            // tbID
+            // 
+            this.tbID.Enabled = false;
+            this.tbID.Font = new System.Drawing.Font("Century Gothic", 24F);
+            this.tbID.Location = new System.Drawing.Point(76, 9);
+            this.tbID.Name = "tbID";
+            this.tbID.ReadOnly = true;
+            this.tbID.Size = new System.Drawing.Size(62, 47);
+            this.tbID.TabIndex = 14;
+            // 
+            // Formtodo
             // 
             this.ClientSize = new System.Drawing.Size(803, 660);
+            this.Controls.Add(this.tbID);
             this.Controls.Add(this.tbData);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btLimpar);
+            this.Controls.Add(this.btInserir);
+            this.Controls.Add(this.dgtodo);
             this.Controls.Add(this.tbDescricao);
             this.Controls.Add(this.tbAtivo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Name = "Formtodo";
+            this.Text = "To-do";
+            this.Load += new System.EventHandler(this.Formtodo_Load_1);
+            ((System.ComponentModel.ISupportInitialize)(this.dgtodo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -199,10 +214,11 @@ namespace TarefasInsert
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox tbAtivo;
         private System.Windows.Forms.TextBox tbDescricao;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.DataGridView dgtodo;
+        private System.Windows.Forms.Button btInserir;
+        private System.Windows.Forms.Button btLimpar;
         private System.Windows.Forms.MaskedTextBox tbData;
+        private System.Windows.Forms.TextBox tbID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colID;
         private System.Windows.Forms.DataGridViewTextBoxColumn colData;
         private System.Windows.Forms.DataGridViewTextBoxColumn coldescricao;
